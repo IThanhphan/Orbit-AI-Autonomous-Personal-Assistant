@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* Typography */
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* 3.1 Light Theme Palette */
+  --color-bg: #f7f8fc;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f1f3f9;
+  --color-primary: #635bff;
+  --color-primary-hover: #5148e5;
+  --color-primary-soft: #eeedff;
+  --color-secondary: #15b8a6;
+  --color-text: #171a2b;
+  --color-text-secondary: #62677a;
+  --color-text-muted: #858a9d;
+  --color-border: #e4e7f0;
+
+  /* Semantic colors (Light) */
+  --color-success: #16865d;
+  --color-success-soft: #e6f6ef;
+  --color-warning: #b7791f;
+  --color-warning-soft: #fff4df;
+  --color-danger: #d64555;
+  --color-danger-soft: #fdebed;
+  --color-info: #3478d4;
+  --color-info-soft: #eaf3ff;
+
+  /* Elevation & Overlay */
+  --shadow-floating: 0 12px 32px rgba(23, 26, 43, 0.08);
+  --shadow-dialog: 0 24px 64px rgba(23, 26, 43, 0.16);
+  --backdrop-overlay: rgba(23, 26, 43, 0.45);
+}
+
+[data-theme="dark"] {
+  /* 3.3 Dark Theme Palette */
+  --color-bg: #10121b;
+  --color-surface: #181b27;
+  --color-surface-muted: #202436;
+  --color-primary: #8b85ff;
+  --color-primary-hover: #a29dff;
+  --color-primary-soft: #2b294b;
+  --color-secondary: #3bd0bc;
+  --color-text: #f3f4fa;
+  --color-text-secondary: #c0c5d5;
+  --color-text-muted: #9299ad;
+  --color-border: #2c3142;
+
+  /* Semantic colors (Dark) */
+  --color-success: #4ac49a;
+  --color-success-soft: #173a32;
+  --color-warning: #e5b45d;
+  --color-warning-soft: #403426;
+  --color-danger: #f0717d;
+  --color-danger-soft: #3d212a;
+  --color-info: #79aaef;
+  --color-info-soft: #1b3150;
+
+  /* Elevation & Overlay */
+  --shadow-floating: 0 12px 35px rgba(0, 0, 0, 0.35);
+  --shadow-dialog: 0 25px 80px rgba(0, 0, 0, 0.48);
+  --backdrop-overlay: rgba(8, 10, 18, 0.72);
+}
+
+/* Đăng ký tokens vào Tailwind v4 */
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-surface: var(--color-surface);
+  --color-surface-muted: var(--color-surface-muted);
+  --color-primary: var(--color-primary);
+  --color-primary-hover: var(--color-primary-hover);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-secondary: var(--color-secondary);
+  --color-text: var(--color-text);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+
+  --color-success: var(--color-success);
+  --color-success-soft: var(--color-success-soft);
+  --color-warning: var(--color-warning);
+  --color-warning-soft: var(--color-warning-soft);
+  --color-danger: var(--color-danger);
+  --color-danger-soft: var(--color-danger-soft);
+  --color-info: var(--color-info);
+  --color-info-soft: var(--color-info-soft);
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    min-width: 320px;
+    transition:
+      background-color 180ms ease,
+      color 180ms ease;
+  }
+
+  /* Mục 13: Tôn trọng cài đặt giảm chuyển động của hệ điều hành */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
