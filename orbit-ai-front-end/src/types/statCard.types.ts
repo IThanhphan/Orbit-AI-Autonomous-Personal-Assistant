@@ -1,13 +1,12 @@
+// src/types/statCard.types.ts
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
-
-export type SparklineColor = "purple" | "cyan" | "amber" | "green";
-export type StatIconColor = "purple" | "teal" | "amber" | "green";
+import type { SparklineColor, StatIconColor } from "./dashboard.types";
 
 export interface StatCardProps {
   title: string;
-  value: string | number;
-  note?: ReactNode;
+  value: string;
+  note: ReactNode;
   icon: LucideIcon;
   color: StatIconColor;
   trend?: SparklineColor;
