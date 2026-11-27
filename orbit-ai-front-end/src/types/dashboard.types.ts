@@ -10,6 +10,7 @@ export type TimelineColor = "purple" | "cyan" | "green" | "amber";
 
 export interface NavItem {
   label: string;
+  path: string;
   icon: LucideIcon;
 }
 

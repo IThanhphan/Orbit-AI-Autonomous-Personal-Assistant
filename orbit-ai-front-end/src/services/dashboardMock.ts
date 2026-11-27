@@ -1,23 +1,23 @@
 import {
   Activity,
   BarChart3,
-  CalendarDays,
   CheckSquare,
   FileText,
   GitBranch,
   LayoutDashboard,
-  ListChecks,
-  MessageCircle,
+  FolderKanban,
+  Calendar,
+  MessageSquare
 } from "lucide-react";
 import type { NavItem, TaskItem, TimelineEntry } from "../types";
 
 export const navItems: NavItem[] = [
-  { label: "Dashboard", icon: LayoutDashboard },
-  { label: "Chat", icon: MessageCircle },
-  { label: "Tasks", icon: CheckSquare },
-  { label: "Plans", icon: ListChecks },
-  { label: "Calendar", icon: CalendarDays },
-  { label: "Activity", icon: Activity },
+  { label: "Dashboard", path: "/", icon: LayoutDashboard },
+  { label: "Chat", path: "/chat", icon: MessageSquare },
+  { label: "Tasks", path: "/tasks", icon: CheckSquare },
+  { label: "Plans", path: "/plans", icon: FolderKanban },
+  { label: "Calendar", path: "/calendar", icon: Calendar },
+  { label: "Activity", path: "/activity", icon: Activity },
 ];
 
 export const taskItems: TaskItem[] = [
